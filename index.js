@@ -20,7 +20,7 @@ async function main() {
     }
   }
   catch (e) {
-    console.log(e.message);
+    console.log(`Unexpected error when retreiving columns: ${e.message}`);
     return;
   }
   if (columnId === null) {
@@ -38,7 +38,7 @@ async function main() {
     });
   }
   catch (e) {
-    console.log(e.message);
+    console.log(`Unexpected error when listing cards: ${e.message}`);
     return;
   }
 
@@ -63,7 +63,7 @@ async function main() {
       });
     }
     catch (e) {
-      console.log(e.message);
+      console.log(`Unexpected error when adding labels: ${e.message}`);
       return true;
     }
   });
