@@ -9,8 +9,8 @@ inputs:
     description: 'Label to add'
     required: true
     default: ''
-  column_id:
-    description: 'Column id'
+  column_name:
+    description: 'Column name'
     required: true
     default: ''
 runs:
