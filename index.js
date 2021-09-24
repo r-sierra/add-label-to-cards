@@ -3,6 +3,7 @@ const github = require('@actions/github');
 const token = core.getInput('token');
 const labelToAdd = core.getInput('label_to_add');
 const columnName = core.getInput('column_name');
+const projectId = core.getInput('project_id');
 const repoOwner = github.context.repo.owner;
 const repo = github.context.repo.repo;
 const octokit = github.getOctokit(token);
@@ -11,7 +12,7 @@ async function main() {
   // Get the column id from the given name
   var columnId = null;
   try {
-    var columns = await octokit.projects.listColumns();
+    var columns = await octokit.projects.listColumns( {project_id: projectId} );
     if (columns) {
       column = columns.filter((col) => col.name === columnName).pop();
       if (column !== undefined) {

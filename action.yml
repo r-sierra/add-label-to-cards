@@ -13,6 +13,10 @@ inputs:
     description: 'Column name'
     required: true
     default: ''
+  project_id:
+    description: 'Project id'
+    required: true
+    default: ''
 runs:
   using: 'node12'
   main: 'index.js'
